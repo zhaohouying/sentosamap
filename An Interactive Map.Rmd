@@ -1,0 +1,25 @@
+---
+title: "An Interactive Map of Sentosa Singapore"
+date: "September 24, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+### This is the map of Sentosa Island,Singapore's top tourist attraction.
+
+```{r}
+library(leaflet)
+
+sentosaLatLong <- data.frame(
+  lat = c(1.249404),
+  lng = c(103.830322))
+
+sentosaLatLong %>% 
+  leaflet() %>%
+  addTiles() %>%
+  addMarkers()
+
+```
